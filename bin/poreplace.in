@@ -1,0 +1,53 @@
+#! /bin/sh -
+
+script_dir=`dirname \`readlink -f $0\``
+base_dir=`dirname $script_dir`
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+pythondir=@pythondir@
+
+if [ $script_dir = "@bindir@" ]; then
+  PYTHONPATH="${pythondir}${PYTHONPATH:+:$PYTHONPATH}"
+  DEFAULT_ERRATA="@datadir@/@PACKAGE@/errata/errata.txt"
+  main_py="@pkgpythondir@/main.py"
+else
+  PYTHONPATH="${base_dir}${PYTHONPATH:+:$PYTHONPATH}"
+  DEFAULT_ERRATA="${base_dir}/data/errata/errata.txt"
+  main_py="${base_dir}/poreplace/main.py"
+fi
+export PYTHONPATH
+
+usage() {
+  echo "poreplace [-e ERRATA] < INPUT.PO > OUTPUT.PO"
+  echo "  default ERRATA is $DEFAULT_ERRATA"
+}
+
+errata="$DEFAULT_ERRATA"
+OPT=`getopt e:h "$@"`
+if test $? -ne 0; then
+  usage >&2
+  exit 1
+fi
+eval set -- "$OPT"
+while :; do
+  case "$1" in
+  -e)
+    errata="$2";
+    shift 2
+    ;;
+  -h)
+    usage
+    exit 0
+    ;;
+  --)
+    shift 1
+    break;
+    ;;
+  *)
+    usage >&2
+    exit 1
+    ;;
+  esac
+done
+@PYTHON@ "$main_py" -e "$errata"

@@ -1,0 +1,14 @@
+Makefile
+Makefile.in
+config.*
+configure
+aclocal.m4
+autom4te.cache
+autoscan.log
+bin/poreplace
+configure.scan
+install-sh
+missing
+py-compile
+*.pyc
+*.tar.gz

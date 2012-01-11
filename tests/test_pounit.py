@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 import unittest
-import sys
-import os
 from pounit import PoUnit
 
 class TestPoUnit(unittest.TestCase):

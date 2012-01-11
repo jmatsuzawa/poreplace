@@ -22,7 +22,7 @@ if __name__ == '__main__':
     units = pofile.parsefile(input).units
     for unit in units:
         pounit = PoUnit(unit)
-        if pounit.istranslated() and \
+        if bool(pounit.target) and \
            not pounit.isobsolete() and \
            not pounit.iscredits():
             pounit.fix_errata(errata.terms)

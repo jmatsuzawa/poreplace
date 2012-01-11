@@ -8,6 +8,7 @@ AC_CONFIG_SRCDIR([poreplace/main.py])
 AM_INIT_AUTOMAKE
 
 # Checks for programs.
+AC_PROG_SED
 AM_PATH_PYTHON(2.6)
 
 dnl checks for python modules

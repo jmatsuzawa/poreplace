@@ -50,4 +50,7 @@ while :; do
     ;;
   esac
 done
-@PYTHON@ "$main_py" -e "$errata"
+@PYTHON@ "$main_py" -e "$errata" |
+  @SED@ -e '$ {
+              /^$/d
+            }'

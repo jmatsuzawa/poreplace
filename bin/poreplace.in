@@ -33,7 +33,7 @@ eval set -- "$OPT"
 while :; do
   case "$1" in
   -e)
-    errata="$2";
+    errata="$2"
     shift 2
     ;;
   -h)
@@ -42,7 +42,7 @@ while :; do
     ;;
   --)
     shift 1
-    break;
+    break
     ;;
   *)
     usage >&2

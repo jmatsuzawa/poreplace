@@ -36,7 +36,7 @@ class TestPoUnit(unittest.TestCase):
         pounit.fix_errata(errata)
         self.assertEqual(pounit.target, u'フォルダー/ホームフォルダー')
 
-    def test__fix_errata_nplurals1(self):
+    def test_fix_errata_nplurals1(self):
         errata = [self.make_term(u'フォルダ(?!ー),フォルダー')]
         pounit = self.make_pounit(
             u'''msgid "folder"

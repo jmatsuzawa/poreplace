@@ -1,1 +1,5 @@
-Require: translate-toolkit (http://translate.sourceforge.net/wiki/toolkit/index)
+Usage:
+$ poreplace [-e ERRATA] < INPUT.PO > OUTPUT.PO
+porepalce will use the default errata when ERRATA is not specified.
+The default errata is dependent on the build configuring.
+See `poreplace -h` for the full path to the default one.

@@ -1,4 +1,4 @@
-erratadir = $(datadir)/@PACKAGE@/errata
+erratadir = $(pkgdatadir)/errata
 errata_DATA = \
 	errata.txt \
 	firewall-errata.txt \

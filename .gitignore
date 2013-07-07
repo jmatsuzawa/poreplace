@@ -12,3 +12,4 @@ missing
 py-compile
 *.pyc
 *.tar.gz
+.*sw[nop]

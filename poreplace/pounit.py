@@ -11,6 +11,8 @@ class PoUnit:
 
     @property
     def target_strings(self):
+        if not isinstance(self.target, multistring):
+            return (self.target,)
         return self.target.strings
 
     def fix_errata(self, terms):

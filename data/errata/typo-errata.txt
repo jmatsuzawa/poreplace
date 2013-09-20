@@ -1,5 +1,6 @@
 buletooth,bluetooth
 deamon,daemon
+iPhod,iPod
 アプケーション,アプリケーション
 アプリーション,アプリケーション
 アプリーケション,アプリケーション
